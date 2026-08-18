@@ -35,9 +35,9 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json({ url: blob.url });
-  } catch {
+  } catch (e) {
     return NextResponse.json(
-      { error: "Error al subir archivo" },
+      { error: "Error al subir archivo", detail: String(e) },
       { status: 500 }
     );
   }
