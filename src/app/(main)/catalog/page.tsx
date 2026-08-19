@@ -57,6 +57,8 @@ function CatalogContent() {
 
   const [products, setProducts] = useState<PublicProduct[]>([]);
   const [loading, setLoading] = useState(true);
+  const [whatsappNumber, setWhatsappNumber] = useState("+5491155551234");
+  const [whatsappMessage, setWhatsappMessage] = useState("Hola! Quisiera consultar por el producto");
 
   const category = searchParams.get("category") ?? "";
   const subcategory = searchParams.get("subcategory") ?? "";
@@ -75,6 +77,16 @@ function CatalogContent() {
     },
     [category, subcategory, search]
   );
+
+  useEffect(() => {
+    fetch("/api/settings")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.whatsappNumber) setWhatsappNumber(data.whatsappNumber);
+        if (data.whatsappMessage) setWhatsappMessage(data.whatsappMessage);
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -191,6 +203,8 @@ function CatalogContent() {
                 description={product.description}
                 price={product.price}
                 imageUrl={product.imageUrl}
+                whatsappNumber={whatsappNumber}
+                whatsappMessage={whatsappMessage}
                 hidePrice
               />
             ))}
