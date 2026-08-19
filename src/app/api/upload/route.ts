@@ -30,10 +30,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "No blob token" }, { status: 500 });
     }
 
+    const ext = file.name.split(".").pop() || "jpg";
+    const filename = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
     const { put } = await import("@vercel/blob");
-    const blob = await put(file.name, file, {
+    const blob = await put(filename, file, {
       access: "public",
-      contentType: file.type,
+      addRandomSuffix: true,
     });
     return NextResponse.json({ url: blob.url });
   } catch (e: unknown) {
