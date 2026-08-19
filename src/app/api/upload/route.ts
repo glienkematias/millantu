@@ -26,30 +26,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const hasToken = !!process.env.BLOB_READ_WRITE_TOKEN;
-
-    if (hasToken) {
-      try {
-        const { put } = await import("@vercel/blob");
-        const blob = await put(file.name, file, {
-          access: "public",
-        });
-        return NextResponse.json({ url: blob.url });
-      } catch (blobError) {
-        return NextResponse.json(
-          { error: "Blob upload failed", detail: String(blobError), hasToken },
-          { status: 500 }
-        );
-      }
+    if (!process.env.BLOB_READ_WRITE_TOKEN) {
+      return NextResponse.json({ error: "No blob token" }, { status: 500 });
     }
 
+    const { put } = await import("@vercel/blob");
+    const blob = await put(file.name, file, {
+      access: "public",
+      contentType: file.type,
+    });
+    return NextResponse.json({ url: blob.url });
+  } catch (e: unknown) {
+    const msg = e instanceof Error ? e.message : String(e);
+    const cause = e instanceof Error && e.cause ? String(e.cause) : undefined;
     return NextResponse.json(
-      { error: "No blob token configured", hasToken },
-      { status: 500 }
-    );
-  } catch (e) {
-    return NextResponse.json(
-      { error: String(e) },
+      { error: msg, cause },
       { status: 500 }
     );
   }
