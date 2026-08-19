@@ -38,7 +38,7 @@ export default function CategorySection({
           </h2>
           <Link
             href={`/catalog?category=${categorySlug}`}
-            className="font-lato text-sm font-medium text-champagne-dark hover:text-champagne transition-colors"
+            className="font-lato text-sm font-medium text-champagne-dark hover:text-champagne transition-colors py-2 min-h-[44px] flex items-center"
           >
             Ver todos &rarr;
           </Link>

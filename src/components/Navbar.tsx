@@ -68,6 +68,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
   const closeTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = useCallback((slug: string) => {
@@ -89,6 +90,11 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
 
   return (
     <nav
@@ -149,7 +155,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden flex flex-col gap-1.5 p-2"
+            className="lg:hidden flex flex-col gap-1.5 w-11 h-11 items-center justify-center"
             aria-label="Toggle menu"
           >
             <span className={`block w-6 h-0.5 bg-warm-brown transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
@@ -160,42 +166,58 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-beige animate-slide-down">
-          <div className="px-4 py-4 space-y-3">
+        <div className="lg:hidden bg-white border-t border-beige animate-slide-down max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="px-4 py-2">
             <Link
               href="/"
               onClick={() => setMobileOpen(false)}
-              className="block text-sm font-lato font-medium text-warm-brown py-2"
+              className="block text-sm font-lato font-medium text-warm-brown py-3 min-h-[44px] flex items-center"
             >
               Inicio
             </Link>
             {categories.map((cat) => (
               <div key={cat.slug}>
-                <Link
-                  href={`/catalog?category=${cat.slug}`}
-                  onClick={() => setMobileOpen(false)}
-                  className="block text-sm font-lato font-medium text-warm-brown py-2"
-                >
-                  {cat.name}
-                </Link>
-                <div className="pl-4 space-y-1">
-                  {cat.subcategories.map((sub) => (
-                    <Link
-                      key={sub.slug}
-                      href={`/catalog?category=${cat.slug}&subcategory=${sub.slug}`}
-                      onClick={() => setMobileOpen(false)}
-                      className="block text-xs font-lato text-warm-gray py-1 hover:text-champagne-dark transition-colors"
+                <div className="flex items-center">
+                  <Link
+                    href={`/catalog?category=${cat.slug}`}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex-1 text-sm font-lato font-medium text-warm-brown py-3 min-h-[44px] flex items-center"
+                  >
+                    {cat.name}
+                  </Link>
+                  <button
+                    onClick={() => setMobileAccordion(mobileAccordion === cat.slug ? null : cat.slug)}
+                    className="w-11 h-11 flex items-center justify-center"
+                    aria-label={`Expandir ${cat.name}`}
+                  >
+                    <svg
+                      className={`w-4 h-4 text-warm-gray transition-transform duration-200 ${mobileAccordion === cat.slug ? "rotate-180" : ""}`}
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
                     >
-                      {sub.name}
-                    </Link>
-                  ))}
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
                 </div>
+                {mobileAccordion === cat.slug && (
+                  <div className="pl-4 pb-2">
+                    {cat.subcategories.map((sub) => (
+                      <Link
+                        key={sub.slug}
+                        href={`/catalog?category=${cat.slug}&subcategory=${sub.slug}`}
+                        onClick={() => setMobileOpen(false)}
+                        className="block text-sm font-lato text-warm-gray py-2.5 min-h-[44px] flex items-center hover:text-champagne-dark transition-colors"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="block text-sm font-lato font-medium text-warm-brown py-2"
+              className="block text-sm font-lato font-medium text-warm-brown py-3 min-h-[44px] flex items-center"
             >
               Contacto
             </a>

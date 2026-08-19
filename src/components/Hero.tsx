@@ -16,12 +16,12 @@ export default function Hero({
         <div className="absolute bottom-10 right-20 w-96 h-96 bg-nude rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-champagne-dark rounded-full blur-3xl" />
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
         <div className="text-center max-w-3xl mx-auto animate-fade-in">
-          <h1 className="font-playfair text-4xl sm:text-5xl lg:text-6xl font-bold text-warm-brown-dark leading-tight mb-6">
+          <h1 className="font-playfair text-3xl sm:text-5xl lg:text-6xl font-bold text-warm-brown-dark leading-tight mb-6">
             {title}
           </h1>
-          <p className="font-lato text-lg lg:text-xl text-warm-gray mb-10 leading-relaxed">
+          <p className="font-lato text-base sm:text-lg lg:text-xl text-warm-gray mb-8 sm:mb-10 leading-relaxed">
             {subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

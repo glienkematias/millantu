@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-warm-brown-dark text-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           <div>
             <h3 className="font-playfair text-2xl font-bold mb-4">
               Millantu Cosméticos
@@ -18,11 +18,11 @@ export default function Footer() {
             <h4 className="font-lato text-sm font-bold uppercase tracking-wider mb-4">
               Enlaces rápidos
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               <li>
                 <Link
                   href="/"
-                  className="font-lato text-sm text-beige hover:text-champagne transition-colors"
+                  className="font-lato text-sm text-beige hover:text-champagne transition-colors inline-block py-2 min-h-[44px] flex items-center"
                 >
                   Inicio
                 </Link>
@@ -30,7 +30,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/catalog"
-                  className="font-lato text-sm text-beige hover:text-champagne transition-colors"
+                  className="font-lato text-sm text-beige hover:text-champagne transition-colors inline-block py-2 min-h-[44px] flex items-center"
                 >
                   Productos
                 </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#contact"
-                  className="font-lato text-sm text-beige hover:text-champagne transition-colors"
+                  className="font-lato text-sm text-beige hover:text-champagne transition-colors inline-block py-2 min-h-[44px] flex items-center"
                 >
                   Contacto
                 </a>
@@ -49,16 +49,18 @@ export default function Footer() {
             <h4 className="font-lato text-sm font-bold uppercase tracking-wider mb-4">
               Contacto
             </h4>
-            <ul className="space-y-2">
-              <li className="font-lato text-sm text-beige">
-                info@millantu.com
+            <ul className="space-y-1">
+              <li>
+                <a href="mailto:info@millantu.com" className="font-lato text-sm text-beige hover:text-champagne transition-colors py-2 min-h-[44px] flex items-center">
+                  info@millantu.com
+                </a>
               </li>
-              <li className="flex gap-4 mt-3">
+              <li className="flex gap-2 mt-3">
                 <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-beige hover:text-champagne transition-colors"
+                  className="text-beige hover:text-champagne transition-colors w-11 h-11 flex items-center justify-center"
                   aria-label="Instagram"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -69,7 +71,7 @@ export default function Footer() {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-beige hover:text-champagne transition-colors"
+                  className="text-beige hover:text-champagne transition-colors w-11 h-11 flex items-center justify-center"
                   aria-label="Facebook"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -80,7 +82,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-warm-brown mt-10 pt-8 text-center">
+        <div className="border-t border-warm-brown mt-8 pt-8 text-center">
           <p className="font-lato text-xs text-beige-light">
             &copy; {new Date().getFullYear()} Millantu Cosméticos. Todos los
             derechos reservados.

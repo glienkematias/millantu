@@ -74,7 +74,7 @@ export default function ProductCard({
           </div>
         )}
       </div>
-      <div className="p-5 pb-14 relative">
+      <div className={`p-5 relative ${!hideWhatsApp ? "pb-14" : ""}`}>
         <h3 className="font-playfair text-lg font-semibold text-warm-brown-dark mb-1 line-clamp-1">
           {name}
         </h3>
@@ -93,7 +93,7 @@ export default function ProductCard({
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute bottom-3 right-3 w-9 h-9 bg-[#25D366] hover:bg-[#1da851] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-110"
+            className="absolute bottom-3 right-3 w-11 h-11 bg-[#25D366] hover:bg-[#1da851] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-110"
             title="Consultar por WhatsApp"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

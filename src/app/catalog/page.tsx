@@ -117,7 +117,7 @@ function CatalogContent() {
                   const val = e.target.value;
                   router.push(buildUrl({ category: val, subcategory: "" }));
                 }}
-                className="w-full border border-beige rounded-lg px-3 py-2 font-lato text-sm text-warm-brown-dark bg-white"
+                className="w-full border border-beige rounded-lg px-3 py-2.5 font-lato text-sm text-warm-brown-dark bg-white"
               >
                 {categoryOptions.map((opt) => (
                   <option key={opt.value} value={opt.value}>
@@ -137,7 +137,7 @@ function CatalogContent() {
                   const val = e.target.value;
                   router.push(buildUrl({ subcategory: val }));
                 }}
-                className="w-full border border-beige rounded-lg px-3 py-2 font-lato text-sm text-warm-brown-dark bg-white"
+                className="w-full border border-beige rounded-lg px-3 py-2.5 font-lato text-sm text-warm-brown-dark bg-white"
                 disabled={!category}
               >
                 {category && subcategoryMap[category] ? (
@@ -159,11 +159,11 @@ function CatalogContent() {
                   value={localSearch}
                   onChange={(e) => setLocalSearch(e.target.value)}
                   placeholder="Buscar productos..."
-                  className="flex-1 border border-beige rounded-l-lg px-3 py-2 font-lato text-sm text-warm-brown-dark bg-white"
+                  className="flex-1 border border-beige rounded-l-lg px-3 py-2.5 font-lato text-sm text-warm-brown-dark bg-white"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-champagne text-white rounded-r-lg hover:bg-champagne-dark transition-colors font-lato text-sm"
+                  className="px-5 py-2.5 bg-champagne text-white rounded-r-lg hover:bg-champagne-dark transition-colors font-lato text-sm min-h-[44px]"
                 >
                   Buscar
                 </button>
