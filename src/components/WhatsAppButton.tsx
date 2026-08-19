@@ -1,9 +1,16 @@
 "use client";
 
-export default function WhatsAppButton() {
-  const phone = "+5491155551234";
-  const message = encodeURIComponent("Hola! Me gustaría recibir más información.");
-  const url = `https://wa.me/${phone.replace(/[^0-9]/g, "")}?text=${message}`;
+interface WhatsAppButtonProps {
+  phone?: string;
+  message?: string;
+}
+
+export default function WhatsAppButton({
+  phone = "+5491155551234",
+  message = "Hola! Me gustaría recibir más información.",
+}: WhatsAppButtonProps) {
+  const encodedMessage = encodeURIComponent(message);
+  const url = `https://wa.me/${phone.replace(/[^0-9]/g, "")}?text=${encodedMessage}`;
 
   return (
     <a
