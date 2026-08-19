@@ -4,8 +4,6 @@ import CategorySection from "@/components/CategorySection";
 import ContactSection from "@/components/ContactSection";
 import Link from "next/link";
 
-export const dynamic = "force-dynamic";
-
 export default async function Home() {
   const [settings, categories, products] = await Promise.all([
     prisma.siteSettings.findUnique({ where: { id: "default" } }),
