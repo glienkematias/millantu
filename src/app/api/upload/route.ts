@@ -26,26 +26,23 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const hasToken = !!process.env.BLOB_READ_WRITE_TOKEN;
     const ext = file.name.split(".").pop() || "jpg";
     const filename = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
 
-    if (process.env.BLOB_READ_WRITE_TOKEN) {
+    if (hasToken) {
       const { put } = await import("@vercel/blob");
       const blob = await put(filename, file, { access: "public" });
       return NextResponse.json({ url: blob.url });
     }
 
-    const { writeFile, mkdir } = await import("fs/promises");
-    const { join } = await import("path");
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-    const uploadDir = join(process.cwd(), "public", "uploads");
-    await mkdir(uploadDir, { recursive: true });
-    await writeFile(join(uploadDir, filename), buffer);
-    return NextResponse.json({ url: `/uploads/${filename}` });
+    return NextResponse.json(
+      { error: "Blob token not configured", hasToken, envKeys: Object.keys(process.env).filter(k => k.includes("BLOB")) },
+      { status: 500 }
+    );
   } catch (e) {
     return NextResponse.json(
-      { error: "Error al subir archivo", detail: String(e) },
+      { error: String(e) },
       { status: 500 }
     );
   }
