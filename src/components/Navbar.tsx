@@ -148,9 +148,9 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <a href="#contact" className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-dark transition-colors">
+            <Link href="/contact" className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-dark transition-colors">
               Contacto
-            </a>
+            </Link>
           </div>
 
           <button
@@ -214,13 +214,13 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               onClick={() => setMobileOpen(false)}
               className="block text-sm font-lato font-medium text-warm-brown py-3 min-h-[44px] flex items-center"
             >
               Contacto
-            </a>
+            </Link>
           </div>
         </div>
       )}
