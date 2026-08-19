@@ -7,6 +7,7 @@ interface Product {
   description?: string | null;
   price: number;
   imageUrl?: string | null;
+  material?: "ORO" | "PLATA" | null;
   slug: string;
 }
 
@@ -51,6 +52,7 @@ export default function CategorySection({
               description={product.description}
               price={product.price}
               imageUrl={product.imageUrl}
+              material={product.material}
               whatsappNumber={whatsappNumber}
               hidePrice={hidePrice}
               hideWhatsApp={hideWhatsApp}

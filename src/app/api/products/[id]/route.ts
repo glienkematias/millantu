@@ -71,6 +71,7 @@ export async function PUT(
     if (body.imageUrl !== undefined) data.imageUrl = body.imageUrl;
     if (body.active !== undefined) data.active = body.active;
     if (body.slug !== undefined) data.slug = body.slug;
+    if (body.material !== undefined) data.material = body.material || null;
 
     const product = await prisma.product.update({
       where: { id },

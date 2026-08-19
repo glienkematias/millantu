@@ -6,6 +6,7 @@ export interface ProductWithRelations {
   price: number;
   imageUrl: string | null;
   active: boolean;
+  material: "ORO" | "PLATA" | null;
   categoryId: string;
   subcategoryId: string | null;
   category: {

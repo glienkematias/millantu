@@ -7,6 +7,11 @@ datasource db {
   provider = "postgresql"
 }
 
+enum Material {
+  ORO
+  PLATA
+}
+
 model Category {
   id          String        @id @default(uuid())
   name        String
@@ -44,6 +49,7 @@ model Product {
   price         Float
   imageUrl      String?
   active        Boolean     @default(true)
+  material      Material?
   categoryId    String
   category      Category    @relation(fields: [categoryId], references: [id])
   subcategoryId String?

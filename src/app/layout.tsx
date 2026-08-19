@@ -25,8 +25,8 @@ export default function RootLayout({
   children,
 }: LayoutProps<"/">) {
   return (
-    <html lang="es" className={`${playfair.variable} ${lato.variable}`}>
-      <body className="min-h-screen flex flex-col">
+    <html lang="es" className={`${playfair.variable} ${lato.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen flex flex-col" suppressHydrationWarning>
         {children}
       </body>
     </html>

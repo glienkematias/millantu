@@ -63,19 +63,20 @@ function CatalogContent() {
   const category = searchParams.get("category") ?? "";
   const subcategory = searchParams.get("subcategory") ?? "";
   const search = searchParams.get("search") ?? "";
+  const material = searchParams.get("material") ?? "";
 
   const [localSearch, setLocalSearch] = useState(search);
 
   const buildUrl = useCallback(
     (updates: Record<string, string>) => {
       const params = new URLSearchParams();
-      const merged = { category, subcategory, search, ...updates };
+      const merged = { category, subcategory, search, material, ...updates };
       Object.entries(merged).forEach(([k, v]) => {
         if (v) params.set(k, v);
       });
       return `/catalog?${params.toString()}`;
     },
-    [category, subcategory, search]
+    [category, subcategory, search, material]
   );
 
   useEffect(() => {
@@ -94,6 +95,7 @@ function CatalogContent() {
     if (category) params.set("category", category);
     if (subcategory) params.set("subcategory", subcategory);
     if (search) params.set("search", search);
+    if (material) params.set("material", material);
     params.set("active", "true");
 
     fetch(`/api/products?${params.toString()}`)
@@ -103,7 +105,7 @@ function CatalogContent() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, [category, subcategory, search]);
+  }, [category, subcategory, search, material]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -118,7 +120,7 @@ function CatalogContent() {
         </h1>
 
         <div className="bg-white rounded-2xl shadow-sm p-4 lg:p-6 mb-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div>
               <label className="block font-lato text-xs font-medium text-warm-gray mb-1">
                 Categoría
@@ -127,7 +129,7 @@ function CatalogContent() {
                 value={category}
                 onChange={(e) => {
                   const val = e.target.value;
-                  router.push(buildUrl({ category: val, subcategory: "" }));
+                  router.push(buildUrl({ category: val, subcategory: "", material: "" }));
                 }}
                 className="w-full border border-beige rounded-lg px-3 py-2.5 font-lato text-sm text-warm-brown-dark bg-white"
               >
@@ -163,6 +165,26 @@ function CatalogContent() {
                 )}
               </select>
             </div>
+
+            {category === "joyeria" && (
+              <div>
+                <label className="block font-lato text-xs font-medium text-warm-gray mb-1">
+                  Material
+                </label>
+                <select
+                  value={material}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    router.push(buildUrl({ material: val }));
+                  }}
+                  className="w-full border border-beige rounded-lg px-3 py-2.5 font-lato text-sm text-warm-brown-dark bg-white"
+                >
+                  <option value="">Todos</option>
+                  <option value="ORO">Folheado oro 18k</option>
+                  <option value="PLATA">Folheado plata 925</option>
+                </select>
+              </div>
+            )}
 
             <form onSubmit={handleSearchSubmit} className="flex items-end">
               <div className="flex w-full">
@@ -203,6 +225,7 @@ function CatalogContent() {
                 description={product.description}
                 price={product.price}
                 imageUrl={product.imageUrl}
+                material={product.material}
                 whatsappNumber={whatsappNumber}
                 whatsappMessage={whatsappMessage}
                 hidePrice

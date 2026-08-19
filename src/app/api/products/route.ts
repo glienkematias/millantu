@@ -26,6 +26,7 @@ export async function GET(request: NextRequest) {
     const subcategory = searchParams.get("subcategory");
     const search = searchParams.get("search");
     const active = searchParams.get("active");
+    const material = searchParams.get("material");
     const minPrice = searchParams.get("minPrice");
     const maxPrice = searchParams.get("maxPrice");
     const limit = searchParams.get("limit");
@@ -43,6 +44,9 @@ export async function GET(request: NextRequest) {
     }
     if (subcategory) {
       where.subcategory = { slug: subcategory };
+    }
+    if (material) {
+      where.material = material as "ORO" | "PLATA";
     }
     if (search) {
       where.name = { contains: search };
@@ -80,7 +84,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { name, description, price, categoryId, subcategoryId, imageUrl, active, slug } = body;
+    const { name, description, price, categoryId, subcategoryId, imageUrl, active, slug, material } = body;
 
     if (!name || price === undefined || !categoryId) {
       return NextResponse.json(
@@ -101,6 +105,7 @@ export async function POST(request: NextRequest) {
         subcategoryId: subcategoryId || null,
         imageUrl: imageUrl || null,
         active: active !== undefined ? active : true,
+        material: material || null,
       },
       include: {
         category: { select: { id: true, name: true, slug: true } },

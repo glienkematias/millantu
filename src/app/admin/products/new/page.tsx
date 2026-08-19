@@ -29,6 +29,7 @@ export default function NewProductPage() {
   const [categoryId, setCategoryId] = useState("");
   const [subcategoryId, setSubcategoryId] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [material, setMaterial] = useState("");
   const [active, setActive] = useState(true);
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -91,6 +92,7 @@ export default function NewProductPage() {
           subcategoryId: subcategoryId || null,
           imageUrl: imageUrl || null,
           active,
+          material: material || null,
           slug: toSlug(name),
         }),
       });
@@ -190,6 +192,21 @@ export default function NewProductPage() {
             </select>
           </div>
         </div>
+
+        {selectedCategory?.slug === "joyeria" && (
+          <div>
+            <label className="block text-sm text-warm-gray mb-1.5">Material</label>
+            <select
+              value={material}
+              onChange={(e) => setMaterial(e.target.value)}
+              className="w-full px-4 py-2.5 rounded-lg border border-beige text-sm text-warm-brown-dark bg-cream/30 focus:border-champagne"
+            >
+              <option value="">Sin material</option>
+              <option value="ORO">Folheado oro 18k</option>
+              <option value="PLATA">Folheado plata 925</option>
+            </select>
+          </div>
+        )}
 
         <div>
           <label className="block text-sm text-warm-gray mb-1.5">Imagen</label>

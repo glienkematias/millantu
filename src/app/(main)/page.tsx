@@ -78,12 +78,13 @@ export default async function Home() {
         const catProducts = products
           .filter((p: { categoryId: string }) => p.categoryId === cat.id)
           .slice(0, 4)
-          .map((p: { id: string; name: string; description: string | null; price: number; imageUrl: string | null; slug: string }) => ({
+          .map((p: { id: string; name: string; description: string | null; price: number; imageUrl: string | null; material: "ORO" | "PLATA" | null; slug: string }) => ({
             id: p.id,
             name: p.name,
             description: p.description,
             price: p.price,
             imageUrl: p.imageUrl,
+            material: p.material,
             slug: p.slug,
           }));
 

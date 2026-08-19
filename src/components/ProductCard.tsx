@@ -3,6 +3,7 @@ interface ProductCardProps {
   description?: string | null;
   price: number;
   imageUrl?: string | null;
+  material?: "ORO" | "PLATA" | null;
   whatsappNumber?: string;
   whatsappMessage?: string;
   hidePrice?: boolean;
@@ -47,6 +48,7 @@ export default function ProductCard({
   description,
   price,
   imageUrl,
+  material,
   whatsappNumber = "+5491155551234",
   whatsappMessage = "Hola! Quisiera consultar por el producto",
   hidePrice = false,
@@ -72,6 +74,15 @@ export default function ProductCard({
               {getInitials(name)}
             </span>
           </div>
+        )}
+        {material && (
+          <span className={`absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-lato font-bold tracking-wide ${
+            material === "ORO"
+              ? "bg-amber-100 text-amber-700 border border-amber-200"
+              : "bg-gray-100 text-gray-600 border border-gray-200"
+          }`}>
+            {material === "ORO" ? "Folheado oro 18k" : "Folheado plata 925"}
+          </span>
         )}
       </div>
       <div className={`p-5 relative ${!hideWhatsApp ? "pb-14" : ""}`}>

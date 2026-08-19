@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { PrismaClient } from "../src/generated/prisma/client.js";
+import { PrismaClient, Material } from "../src/generated/prisma/client.js";
 import { PrismaPg } from "@prisma/adapter-pg";
 import * as bcrypt from "bcryptjs";
 
@@ -121,7 +121,7 @@ async function main() {
     subcategories[sub.slug] = created;
   }
 
-  const productsData = [
+  const productsData: { name: string; slug: string; description: string; price: number; categoryId: string; subcategoryId: string; imageUrl: string | null; material?: Material }[] = [
     {
       name: "Limpiador Facial Suave",
       slug: "limpiador-facial-suave",
@@ -282,6 +282,7 @@ async function main() {
       price: 8900,
       categoryId: joyeria.id,
       subcategoryId: subcategories["collares"].id,
+      material: "ORO",
       imageUrl: null,
     },
     {
@@ -291,6 +292,7 @@ async function main() {
       price: 6500,
       categoryId: joyeria.id,
       subcategoryId: subcategories["pulseras"].id,
+      material: "PLATA",
       imageUrl: null,
     },
     {
@@ -300,6 +302,7 @@ async function main() {
       price: 7200,
       categoryId: joyeria.id,
       subcategoryId: subcategories["aros"].id,
+      material: "ORO",
       imageUrl: null,
     },
     {
@@ -309,6 +312,7 @@ async function main() {
       price: 5800,
       categoryId: joyeria.id,
       subcategoryId: subcategories["anillos"].id,
+      material: "PLATA",
       imageUrl: null,
     },
     {
@@ -318,6 +322,7 @@ async function main() {
       price: 24900,
       categoryId: joyeria.id,
       subcategoryId: subcategories["sets"].id,
+      material: "ORO",
       imageUrl: null,
     },
   ];
@@ -325,7 +330,7 @@ async function main() {
   for (const product of productsData) {
     await prisma.product.upsert({
       where: { slug: product.slug },
-      update: {},
+      update: { material: (product.material as Material) ?? null },
       create: product,
     });
   }
