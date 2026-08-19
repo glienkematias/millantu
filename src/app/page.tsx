@@ -37,9 +37,9 @@ export default async function Home() {
   const whatsappNumber = settings?.whatsappNumber ?? "+5491155551234";
 
   const categoryIcons: Record<string, string> = {
-    "cuidados-de-la-piel": "/images/categories/crema.svg",
-    fragancias: "/images/categories/perfume.svg",
-    maquillajes: "/images/categories/labial.svg",
+    "cuidados-de-la-piel": "/images/categories/crema.jpeg",
+    fragancias: "/images/categories/perfume.jpeg",
+    maquillajes: "/images/categories/labial.jpeg",
     joyeria: "/images/categories/anillo.svg",
   };
 
