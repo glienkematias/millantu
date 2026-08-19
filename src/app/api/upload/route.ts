@@ -26,10 +26,27 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const bytes = await file.arrayBuffer();
-    const base64 = Buffer.from(bytes).toString("base64");
-    const mime = file.type || "image/jpeg";
-    return NextResponse.json({ url: `data:${mime};base64,${base64}` });
+    const hasToken = !!process.env.BLOB_READ_WRITE_TOKEN;
+
+    if (hasToken) {
+      try {
+        const { put } = await import("@vercel/blob");
+        const blob = await put(file.name, file, {
+          access: "public",
+        });
+        return NextResponse.json({ url: blob.url });
+      } catch (blobError) {
+        return NextResponse.json(
+          { error: "Blob upload failed", detail: String(blobError), hasToken },
+          { status: 500 }
+        );
+      }
+    }
+
+    return NextResponse.json(
+      { error: "No blob token configured", hasToken },
+      { status: 500 }
+    );
   } catch (e) {
     return NextResponse.json(
       { error: String(e) },
