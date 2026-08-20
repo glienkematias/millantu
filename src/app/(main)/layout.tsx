@@ -14,7 +14,7 @@ export default async function MainLayout({
 
   return (
     <>
-      <Navbar />
+      <Navbar logo={settings?.logo ?? null} />
       <main className="flex-1">{children}</main>
       <Footer />
       <WhatsAppButton

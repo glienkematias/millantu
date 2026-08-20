@@ -61,7 +61,7 @@ const categories: CategoryItem[] = [
   },
 ];
 
-export default function Navbar() {
+export default function Navbar({ logo }: { logo?: string | null }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -100,11 +100,17 @@ export default function Navbar() {
           ? "bg-cream/95 backdrop-blur-md shadow-sm"
           : "bg-cream"
       }`}
+      suppressHydrationWarning
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/" className="font-playfair text-xl lg:text-2xl font-bold text-warm-brown-dark tracking-tight">
-            Millantu Cosméticos
+          <Link href="/" className="flex items-center gap-2">
+            {logo && (
+              <img src={logo} alt="Millantu" className="h-10 w-auto object-contain" />
+            )}
+            <span className="font-playfair text-xl lg:text-2xl font-bold text-warm-brown-dark tracking-tight">
+              Millantu Cosméticos
+            </span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
