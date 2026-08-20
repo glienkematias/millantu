@@ -43,11 +43,12 @@ const subcategoryMap: Record<string, { label: string; value: string }[]> = {
   ],
   joyeria: [
     { label: "Todas", value: "" },
-    { label: "Collares", value: "collares" },
+    { label: "Cadenas", value: "cadenas" },
+    { label: "Dijes", value: "dijes" },
     { label: "Pulseras", value: "pulseras" },
-    { label: "Aros", value: "aros" },
     { label: "Anillos", value: "anillos" },
-    { label: "Sets", value: "sets" },
+    { label: "Aros", value: "aros" },
+    { label: "Conjuntos", value: "conjuntos" },
   ],
 };
 
@@ -141,9 +142,29 @@ function CatalogContent() {
               </select>
             </div>
 
+            {category === "joyeria" && (
+              <div>
+                <label className="block font-lato text-xs font-medium text-warm-gray mb-1">
+                  Material
+                </label>
+                <select
+                  value={material}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    router.push(buildUrl({ material: val }));
+                  }}
+                  className="w-full border border-beige rounded-lg px-3 py-2.5 font-lato text-sm text-warm-brown-dark bg-white"
+                >
+                  <option value="">Todos</option>
+                  <option value="ORO">Folheado oro 18k</option>
+                  <option value="PLATA">Folheado plata 925</option>
+                </select>
+              </div>
+            )}
+
             <div>
               <label className="block font-lato text-xs font-medium text-warm-gray mb-1">
-                Subcategoría
+                {category === "joyeria" ? "Tipo" : "Subcategoría"}
               </label>
               <select
                 value={subcategory}
@@ -165,26 +186,6 @@ function CatalogContent() {
                 )}
               </select>
             </div>
-
-            {category === "joyeria" && (
-              <div>
-                <label className="block font-lato text-xs font-medium text-warm-gray mb-1">
-                  Material
-                </label>
-                <select
-                  value={material}
-                  onChange={(e) => {
-                    const val = e.target.value;
-                    router.push(buildUrl({ material: val }));
-                  }}
-                  className="w-full border border-beige rounded-lg px-3 py-2.5 font-lato text-sm text-warm-brown-dark bg-white"
-                >
-                  <option value="">Todos</option>
-                  <option value="ORO">Folheado oro 18k</option>
-                  <option value="PLATA">Folheado plata 925</option>
-                </select>
-              </div>
-            )}
 
             <form onSubmit={handleSearchSubmit} className="flex items-end">
               <div className="flex w-full">

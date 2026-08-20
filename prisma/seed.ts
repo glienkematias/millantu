@@ -81,6 +81,13 @@ async function main() {
 
   const [piel, fragancias, maquillajes, joyeria] = categories;
 
+  await prisma.subcategory.deleteMany({
+    where: {
+      categoryId: joyeria.id,
+      slug: { in: ["collares", "sets"] },
+    },
+  });
+
   const subcategoriesData: { name: string; slug: string; categoryId: string; order: number }[] = [
     { name: "Limpieza facial", slug: "limpieza-facial", categoryId: piel.id, order: 1 },
     { name: "Cremas", slug: "cremas", categoryId: piel.id, order: 2 },
@@ -103,11 +110,12 @@ async function main() {
     { name: "Rubores", slug: "rubores", categoryId: maquillajes.id, order: 6 },
     { name: "Máscaras de pestañas", slug: "mascaras-de-pestanas", categoryId: maquillajes.id, order: 7 },
 
-    { name: "Collares", slug: "collares", categoryId: joyeria.id, order: 1 },
-    { name: "Pulseras", slug: "pulseras", categoryId: joyeria.id, order: 2 },
-    { name: "Aros", slug: "aros", categoryId: joyeria.id, order: 3 },
+    { name: "Cadenas", slug: "cadenas", categoryId: joyeria.id, order: 1 },
+    { name: "Dijes", slug: "dijes", categoryId: joyeria.id, order: 2 },
+    { name: "Pulseras", slug: "pulseras", categoryId: joyeria.id, order: 3 },
     { name: "Anillos", slug: "anillos", categoryId: joyeria.id, order: 4 },
-    { name: "Sets", slug: "sets", categoryId: joyeria.id, order: 5 },
+    { name: "Aros", slug: "aros", categoryId: joyeria.id, order: 5 },
+    { name: "Conjuntos", slug: "conjuntos", categoryId: joyeria.id, order: 6 },
   ];
 
   const subcategories: Record<string, { id: string }> = {};
@@ -281,7 +289,7 @@ async function main() {
       description: "Collar con dije de rosa en baño de oro. Cadena delicada y ajustable.",
       price: 8900,
       categoryId: joyeria.id,
-      subcategoryId: subcategories["collares"].id,
+      subcategoryId: subcategories["cadenas"].id,
       material: "ORO",
       imageUrl: null,
     },
@@ -321,7 +329,7 @@ async function main() {
       description: "Set que incluye collar, pulsera, aros y anillo con tema lunar. La colección completa.",
       price: 24900,
       categoryId: joyeria.id,
-      subcategoryId: subcategories["sets"].id,
+      subcategoryId: subcategories["conjuntos"].id,
       material: "ORO",
       imageUrl: null,
     },

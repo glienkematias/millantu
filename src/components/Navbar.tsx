@@ -55,11 +55,8 @@ const categories: CategoryItem[] = [
     name: "Joyería",
     slug: "joyeria",
     subcategories: [
-      { name: "Collares", slug: "collares" },
-      { name: "Pulseras", slug: "pulseras" },
-      { name: "Aros", slug: "aros" },
-      { name: "Anillos", slug: "anillos" },
-      { name: "Sets", slug: "sets" },
+      { name: "Folheado oro 18k", slug: "joyeria-oro" },
+      { name: "Folheado plata 925", slug: "joyeria-plata" },
     ],
   },
 ];
@@ -134,15 +131,20 @@ export default function Navbar() {
                     onMouseLeave={handleMouseLeave}
                   >
                     <div className="bg-white rounded-lg shadow-lg border border-beige py-2 min-w-[200px] animate-slide-down">
-                      {cat.subcategories.map((sub) => (
-                        <Link
-                          key={sub.slug}
-                          href={`/catalog?category=${cat.slug}&subcategory=${sub.slug}`}
-                          className="block px-4 py-2 text-sm font-lato text-warm-brown hover:bg-cream-dark hover:text-champagne-dark transition-colors"
-                        >
-                          {sub.name}
-                        </Link>
-                      ))}
+                      {cat.subcategories.map((sub) => {
+                        const href = sub.slug.startsWith("joyeria-")
+                          ? `/catalog?category=${cat.slug}&material=${sub.slug === "joyeria-oro" ? "ORO" : "PLATA"}`
+                          : `/catalog?category=${cat.slug}&subcategory=${sub.slug}`;
+                        return (
+                          <Link
+                            key={sub.slug}
+                            href={href}
+                            className="block px-4 py-2 text-sm font-lato text-warm-brown hover:bg-cream-dark hover:text-champagne-dark transition-colors"
+                          >
+                            {sub.name}
+                          </Link>
+                        );
+                      })}
                     </div>
                   </div>
                 )}
@@ -200,16 +202,21 @@ export default function Navbar() {
                 </div>
                 {mobileAccordion === cat.slug && (
                   <div className="pl-4 pb-2">
-                    {cat.subcategories.map((sub) => (
-                      <Link
-                        key={sub.slug}
-                        href={`/catalog?category=${cat.slug}&subcategory=${sub.slug}`}
-                        onClick={() => setMobileOpen(false)}
-                        className="block text-sm font-lato text-warm-gray py-2.5 min-h-[44px] flex items-center hover:text-champagne-dark transition-colors"
-                      >
-                        {sub.name}
-                      </Link>
-                    ))}
+                    {cat.subcategories.map((sub) => {
+                      const href = sub.slug.startsWith("joyeria-")
+                        ? `/catalog?category=${cat.slug}&material=${sub.slug === "joyeria-oro" ? "ORO" : "PLATA"}`
+                        : `/catalog?category=${cat.slug}&subcategory=${sub.slug}`;
+                      return (
+                        <Link
+                          key={sub.slug}
+                          href={href}
+                          onClick={() => setMobileOpen(false)}
+                          className="block text-sm font-lato text-warm-gray py-2.5 min-h-[44px] flex items-center hover:text-champagne-dark transition-colors"
+                        >
+                          {sub.name}
+                        </Link>
+                      );
+                    })}
                   </div>
                 )}
               </div>

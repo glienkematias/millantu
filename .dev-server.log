@@ -1,0 +1,767 @@
+
+> millantu@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.107:3000
+- Environments: .env
+✓ Ready in 3.4s
+⚠ Warning: Next.js ignored package-lock.json in /media/usuario/d3618142-eb8c-4c28-b64f-602126fd7e9b/home/usuario because it is outside the current Git repository (/media/usuario/d3618142-eb8c-4c28-b64f-602126fd7e9b/home/usuario/Dropbox-Personal/Dropbox/2026_programacion/Landing/Millantu).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.ts took 1101ms
+
+(node:10312) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ GET / 200 in 3.8s (next.js: 695ms, application-code: 3.1s)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <InnerScrollHandlerNew focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="/" loading={null}>
+          <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+                    <SegmentViewNode type="layout" pagePath="(main)/lay...">
+                      <SegmentTrieNode>
+                      <script>
+                      <MainLayout>
+                        ...
+                          <div className="max-w-7xl ...">
+                            <div className="flex items...">
+                              <LinkComponent href="/" className="font-playf...">
+                                <a
++                                 className="font-playfair text-xl lg:text-2xl font-bold text-warm-brown-dark tracking..."
+-                                 className="font-playfair text-xl lg:text-2xl font-bold text-warm-brown-dark tracking..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/"
+                                >
++                                 Millantu Cosméticos
+                              <div className="hidden lg:...">
+                                <LinkComponent href="/" className="text-sm fo...">
+                                  <a
++                                   className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-dark..."
+-                                   className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-dark..."
+                                    ref={function}
+                                    onClick={function onClick}
+                                    onMouseEnter={function onMouseEnter}
+                                    onTouchStart={function onTouchStart}
+                                    href="/"
+                                  >
++                                   Inicio
+                                <div className="relative" onMouseEnter={function onMouseEnter} ...>
+                                  <LinkComponent href="/catalog?c..." className="text-sm fo...">
+                                    <a
++                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+-                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+                                      ref={function}
+                                      onClick={function onClick}
+                                      onMouseEnter={function onMouseEnter}
+                                      onTouchStart={function onTouchStart}
+                                      href="/catalog?category=cuidados-de-la-piel"
+                                    >
++                                     Cuidados de la Piel
+                                <div className="relative" onMouseEnter={function onMouseEnter} ...>
+                                  <LinkComponent href="/catalog?c..." className="text-sm fo...">
+                                    <a
++                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+-                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+                                      ref={function}
+                                      onClick={function onClick}
+                                      onMouseEnter={function onMouseEnter}
+                                      onTouchStart={function onTouchStart}
+                                      href="/catalog?category=fragancias"
+                                    >
++                                     Fragancias
+                                <div className="relative" onMouseEnter={function onMouseEnter} ...>
+                                  <LinkComponent href="/catalog?c..." className="text-sm fo...">
+                                    <a
++                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+-                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+                                      ref={function}
+                                      onClick={function onClick}
+                                      onMouseEnter={function onMouseEnter}
+                                      onTouchStart={function onTouchStart}
+                                      href="/catalog?category=maquillajes"
+                                    >
++                                     Maquillajes
+                                <div className="relative" onMouseEnter={function onMouseEnter} ...>
+                                  <LinkComponent href="/catalog?c..." className="text-sm fo...">
+                                    <a
++                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+-                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+                                      ref={function}
+                                      onClick={function onClick}
+                                      onMouseEnter={function onMouseEnter}
+                                      onTouchStart={function onTouchStart}
+                                      href="/catalog?category=joyeria"
+                                    >
++                                     Joyería
+                                <LinkComponent href="/contact" className="text-sm fo...">
+                                  <a
++                                   className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-dark..."
+-                                   className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-dark..."
+                                    ref={function}
+                                    onClick={function onClick}
+                                    onMouseEnter={function onMouseEnter}
+                                    onTouchStart={function onTouchStart}
+                                    href="/contact"
+                                  >
++                                   Contacto
+                              ...
+                        ...
+                          <Home>
+                            <div>
+                              <Hero>
+                                <section className="relative o...">
+                                  <div>
+                                  <div className="relative m...">
+                                    <div className="text-cente...">
+                                      <h1>
+                                      <p>
+                                      <div className="flex flex-...">
+                                        <LinkComponent>
+                                          <LinkComponent href="/catalog" className="inline-fle...">
+                                            <a
++                                             className="inline-flex items-center justify-center px-8 py-3.5 bg-champa..."
+-                                             className="inline-flex items-center justify-center px-8 py-3.5 bg-champa..."
+                                              ref={function}
+                                              onClick={function onClick}
+                                              onMouseEnter={function onMouseEnter}
+                                              onTouchStart={function onTouchStart}
+                                              href="/catalog"
+                                            >
++                                             Ver productos
+                                        <a
+                                          href="#contact"
++                                         className="inline-flex items-center justify-center px-8 py-3.5 border-2 bord..."
+-                                         className="inline-flex items-center justify-center px-8 py-3.5 border-2 bord..."
+                                        >
++                                         Contactanos
+                              ...
+                                <div className="grid grid-...">
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="group bg-c...">
+                                      <a
++                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+-                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=cuidados-de-la-piel"
+                                      >
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="group bg-c...">
+                                      <a
++                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+-                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=fragancias"
+                                      >
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="group bg-c...">
+                                      <a
++                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+-                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=maquillajes"
+                                      >
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="group bg-c...">
+                                      <a
++                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+-                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=joyeria"
+                                      >
+                              ...
+                                <div className="flex items...">
+                                  <h2>
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="font-lato ...">
+                                      <a
++                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+-                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=cuidados-de-la-piel"
+                                      >
++                                       Ver todos →
+                              ...
+                                <div className="flex items...">
+                                  <h2>
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="font-lato ...">
+                                      <a
++                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+-                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=maquillajes"
+                                      >
++                                       Ver todos →
+                              ...
+                                <div className="flex items...">
+                                  <h2>
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="font-lato ...">
+                                      <a
++                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+-                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=joyeria"
+                                      >
++                                       Ver todos →
+                              ...
+                                <div className="mt-10">
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog" className="inline-fle...">
+                                      <a
++                                       className="inline-flex items-center justify-center px-8 py-3.5 bg-champagne ho..."
+-                                       className="inline-flex items-center justify-center px-8 py-3.5 bg-champagne ho..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog"
+                                      >
++                                       Explorar productos
+                              <ContactSection>
+                                <section id="contact" className="py-16 lg:p...">
+                                  <div className="max-w-4xl ...">
+                                    <h2>
+                                    <p>
+                                    <a
+                                      href="https://wa.me/5491155551234?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20m%..."
+                                      target="_blank"
+                                      rel="noopener noreferrer"
++                                     className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#1da8..."
+-                                     className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#1da8..."
+                                    >
+                                    <div className="flex justi...">
+                                      <a
+                                        href="https://instagram.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
++                                       className="w-12 h-12 rounded-full bg-warm-brown-dark/10 flex items-center just..."
+-                                       className="w-12 h-12 rounded-full bg-warm-brown-dark/10 flex items-center just..."
+                                        aria-label="Instagram"
+                                      >
+                                      <a
+                                        href="https://facebook.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
++                                       className="w-12 h-12 rounded-full bg-warm-brown-dark/10 flex items-center just..."
+-                                       className="w-12 h-12 rounded-full bg-warm-brown-dark/10 flex items-center just..."
+                                        aria-label="Facebook"
+                                      >
+                                    ...
+                        ...
+                          <div className="grid grid-...">
+                            <div>
+                            <div>
+                              <h4>
+                              <ul className="space-y-1">
+                                <li>
+                                  <LinkComponent>
+                                    <LinkComponent href="/" className="font-lato ...">
+                                      <a
++                                       className="font-lato text-sm text-beige hover:text-champagne transition-colors..."
+-                                       className="font-lato text-sm text-beige hover:text-champagne transition-colors..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/"
+                                      >
++                                       Inicio
+                                <li>
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog" className="font-lato ...">
+                                      <a
++                                       className="font-lato text-sm text-beige hover:text-champagne transition-colors..."
+-                                       className="font-lato text-sm text-beige hover:text-champagne transition-colors..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog"
+                                      >
++                                       Productos
+                                <li>
+                                  <a
+                                    href="#contact"
++                                   className="font-lato text-sm text-beige hover:text-champagne transition-colors inl..."
+-                                   className="font-lato text-sm text-beige hover:text-champagne transition-colors inl..."
+                                  >
++                                   Contacto
+                            <div>
+                              <h4>
+                              <ul className="space-y-1">
+                                <li>
+                                  <a
+                                    href="mailto:info@millantu.com"
++                                   className="font-lato text-sm text-beige hover:text-champagne transition-colors py-..."
+-                                   className="font-lato text-sm text-beige hover:text-champagne transition-colors py-..."
+                                  >
++                                   info@millantu.com
+                                <li className="flex gap-2...">
+                                  <a
+                                    href="https://instagram.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
++                                   className="text-beige hover:text-champagne transition-colors w-11 h-11 flex items-..."
+-                                   className="text-beige hover:text-champagne transition-colors w-11 h-11 flex items-..."
+                                    aria-label="Instagram"
+                                  >
+                                  <a
+                                    href="https://facebook.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
++                                   className="text-beige hover:text-champagne transition-colors w-11 h-11 flex items-..."
+-                                   className="text-beige hover:text-champagne transition-colors w-11 h-11 flex items-..."
+                                    aria-label="Facebook"
+                                  >
+                        <WhatsAppButton phone="+54 9 294 ..." message="Hola! Quis...">
+                          <a
+                            href="https://wa.me/5492944924730?text=Hola!%20Quisiera%20consultar%20por%20el%20producto"
+                            target="_blank"
+                            rel="noopener noreferrer"
++                           className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-cent..."
+-                           className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-cent..."
+                            aria-label="Contactar por WhatsApp"
+                          >
+                  ...
+      ...
+ 
+ GET /admin 200 in 348ms (next.js: 89ms, application-code: 259ms)
+ GET / 200 in 906ms (next.js: 48ms, application-code: 858ms)
+ GET /api/auth/me 200 in 495ms (next.js: 206ms, application-code: 290ms)
+ GET /api/auth/me 200 in 241ms (next.js: 11ms, application-code: 229ms)
+ GET /api/products?active=false&limit=100 200 in 469ms (next.js: 87ms, application-code: 382ms)
+ GET /api/products?active=false&limit=100 200 in 399ms (next.js: 12ms, application-code: 387ms)
+ GET /api/products?limit=5 200 in 1587ms (next.js: 6ms, application-code: 1581ms)
+ GET /api/categories 200 in 1617ms (next.js: 69ms, application-code: 1549ms)
+ GET /api/products?active=true&limit=100 200 in 1774ms (next.js: 73ms, application-code: 1701ms)
+ GET /admin/products 200 in 84ms (next.js: 33ms, application-code: 52ms)
+ GET /api/categories 200 in 390ms (next.js: 7ms, application-code: 383ms)
+ GET /api/auth/me 200 in 211ms (next.js: 8ms, application-code: 204ms)
+ GET /api/products?limit=5 200 in 573ms (next.js: 5ms, application-code: 568ms)
+ GET /api/products?active=true&limit=100 200 in 573ms (next.js: 4ms, application-code: 569ms)
+ GET /api/products? 200 in 390ms (next.js: 6ms, application-code: 384ms)
+ GET /admin/products/346814d0-acfd-47d4-99c8-be409398e514/edit 200 in 1175ms (next.js: 1048ms, application-code: 126ms)
+ GET /api/auth/me 200 in 212ms (next.js: 13ms, application-code: 198ms)
+ GET /api/categories 200 in 432ms (next.js: 12ms, application-code: 420ms)
+ GET /api/categories 200 in 413ms (next.js: 6ms, application-code: 407ms)
+ GET /api/products/346814d0-acfd-47d4-99c8-be409398e514 200 in 2.4s (next.js: 2.0s, application-code: 412ms)
+ GET /api/products/346814d0-acfd-47d4-99c8-be409398e514 200 in 428ms (next.js: 47ms, application-code: 381ms)
+✓ Compiled in 149ms
+ GET /admin/products/346814d0-acfd-47d4-99c8-be409398e514/edit 200 in 157ms (next.js: 32ms, application-code: 125ms)
+✓ Compiled in 110ms
+ GET /admin/products/346814d0-acfd-47d4-99c8-be409398e514/edit 200 in 131ms (next.js: 43ms, application-code: 87ms)
+ GET /admin/products/346814d0-acfd-47d4-99c8-be409398e514/edit 200 in 140ms (next.js: 35ms, application-code: 105ms)
+ GET / 200 in 2.0s (next.js: 44ms, application-code: 2.0s)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <InnerScrollHandlerNew focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="/" loading={null}>
+          <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+                    <SegmentViewNode type="layout" pagePath="(main)/lay...">
+                      <SegmentTrieNode>
+                      <script>
+                      <MainLayout>
+                        ...
+                          <div className="max-w-7xl ...">
+                            <div className="flex items...">
+                              <LinkComponent href="/" className="font-playf...">
+                                <a
++                                 className="font-playfair text-xl lg:text-2xl font-bold text-warm-brown-dark tracking..."
+-                                 className="font-playfair text-xl lg:text-2xl font-bold text-warm-brown-dark tracking..."
+                                  ref={function}
+                                  onClick={function onClick}
+                                  onMouseEnter={function onMouseEnter}
+                                  onTouchStart={function onTouchStart}
+                                  href="/"
+                                >
++                                 Millantu Cosméticos
+                              <div className="hidden lg:...">
+                                <LinkComponent href="/" className="text-sm fo...">
+                                  <a
++                                   className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-dark..."
+-                                   className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-dark..."
+                                    ref={function}
+                                    onClick={function onClick}
+                                    onMouseEnter={function onMouseEnter}
+                                    onTouchStart={function onTouchStart}
+                                    href="/"
+                                  >
++                                   Inicio
+                                <div className="relative" onMouseEnter={function onMouseEnter} ...>
+                                  <LinkComponent href="/catalog?c..." className="text-sm fo...">
+                                    <a
++                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+-                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+                                      ref={function}
+                                      onClick={function onClick}
+                                      onMouseEnter={function onMouseEnter}
+                                      onTouchStart={function onTouchStart}
+                                      href="/catalog?category=cuidados-de-la-piel"
+                                    >
++                                     Cuidados de la Piel
+                                <div className="relative" onMouseEnter={function onMouseEnter} ...>
+                                  <LinkComponent href="/catalog?c..." className="text-sm fo...">
+                                    <a
++                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+-                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+                                      ref={function}
+                                      onClick={function onClick}
+                                      onMouseEnter={function onMouseEnter}
+                                      onTouchStart={function onTouchStart}
+                                      href="/catalog?category=fragancias"
+                                    >
++                                     Fragancias
+                                <div className="relative" onMouseEnter={function onMouseEnter} ...>
+                                  <LinkComponent href="/catalog?c..." className="text-sm fo...">
+                                    <a
++                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+-                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+                                      ref={function}
+                                      onClick={function onClick}
+                                      onMouseEnter={function onMouseEnter}
+                                      onTouchStart={function onTouchStart}
+                                      href="/catalog?category=maquillajes"
+                                    >
++                                     Maquillajes
+                                <div className="relative" onMouseEnter={function onMouseEnter} ...>
+                                  <LinkComponent href="/catalog?c..." className="text-sm fo...">
+                                    <a
++                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+-                                     className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-da..."
+                                      ref={function}
+                                      onClick={function onClick}
+                                      onMouseEnter={function onMouseEnter}
+                                      onTouchStart={function onTouchStart}
+                                      href="/catalog?category=joyeria"
+                                    >
++                                     Joyería
+                                <LinkComponent href="/contact" className="text-sm fo...">
+                                  <a
++                                   className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-dark..."
+-                                   className="text-sm font-lato font-medium text-warm-brown hover:text-champagne-dark..."
+                                    ref={function}
+                                    onClick={function onClick}
+                                    onMouseEnter={function onMouseEnter}
+                                    onTouchStart={function onTouchStart}
+                                    href="/contact"
+                                  >
++                                   Contacto
+                              ...
+                        ...
+                          <Home>
+                            <div>
+                              <Hero>
+                                <section className="relative o...">
+                                  <div>
+                                  <div className="relative m...">
+                                    <div className="text-cente...">
+                                      <h1>
+                                      <p>
+                                      <div className="flex flex-...">
+                                        <LinkComponent>
+                                          <LinkComponent href="/catalog" className="inline-fle...">
+                                            <a
++                                             className="inline-flex items-center justify-center px-8 py-3.5 bg-champa..."
+-                                             className="inline-flex items-center justify-center px-8 py-3.5 bg-champa..."
+                                              ref={function}
+                                              onClick={function onClick}
+                                              onMouseEnter={function onMouseEnter}
+                                              onTouchStart={function onTouchStart}
+                                              href="/catalog"
+                                            >
++                                             Ver productos
+                                        <a
+                                          href="#contact"
++                                         className="inline-flex items-center justify-center px-8 py-3.5 border-2 bord..."
+-                                         className="inline-flex items-center justify-center px-8 py-3.5 border-2 bord..."
+                                        >
++                                         Contactanos
+                              ...
+                                <div className="grid grid-...">
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="group bg-c...">
+                                      <a
++                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+-                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=cuidados-de-la-piel"
+                                      >
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="group bg-c...">
+                                      <a
++                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+-                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=fragancias"
+                                      >
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="group bg-c...">
+                                      <a
++                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+-                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=maquillajes"
+                                      >
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="group bg-c...">
+                                      <a
++                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+-                                       className="group bg-cream rounded-2xl p-6 lg:p-8 text-center hover:bg-champagn..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=joyeria"
+                                      >
+                              ...
+                                <div className="flex items...">
+                                  <h2>
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="font-lato ...">
+                                      <a
++                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+-                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=cuidados-de-la-piel"
+                                      >
++                                       Ver todos →
+                              ...
+                                <div className="flex items...">
+                                  <h2>
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="font-lato ...">
+                                      <a
++                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+-                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=maquillajes"
+                                      >
++                                       Ver todos →
+                              ...
+                                <div className="flex items...">
+                                  <h2>
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog?c..." className="font-lato ...">
+                                      <a
++                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+-                                       className="font-lato text-sm font-medium text-champagne-dark hover:text-champa..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog?category=joyeria"
+                                      >
++                                       Ver todos →
+                              ...
+                                <div className="mt-10">
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog" className="inline-fle...">
+                                      <a
++                                       className="inline-flex items-center justify-center px-8 py-3.5 bg-champagne ho..."
+-                                       className="inline-flex items-center justify-center px-8 py-3.5 bg-champagne ho..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog"
+                                      >
++                                       Explorar productos
+                              <ContactSection>
+                                <section id="contact" className="py-16 lg:p...">
+                                  <div className="max-w-4xl ...">
+                                    <h2>
+                                    <p>
+                                    <a
+                                      href="https://wa.me/5491155551234?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20m%..."
+                                      target="_blank"
+                                      rel="noopener noreferrer"
++                                     className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#1da8..."
+-                                     className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#1da8..."
+                                    >
+                                    <div className="flex justi...">
+                                      <a
+                                        href="https://instagram.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
++                                       className="w-12 h-12 rounded-full bg-warm-brown-dark/10 flex items-center just..."
+-                                       className="w-12 h-12 rounded-full bg-warm-brown-dark/10 flex items-center just..."
+                                        aria-label="Instagram"
+                                      >
+                                      <a
+                                        href="https://facebook.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
++                                       className="w-12 h-12 rounded-full bg-warm-brown-dark/10 flex items-center just..."
+-                                       className="w-12 h-12 rounded-full bg-warm-brown-dark/10 flex items-center just..."
+                                        aria-label="Facebook"
+                                      >
+                                    ...
+                        ...
+                          <div className="grid grid-...">
+                            <div>
+                            <div>
+                              <h4>
+                              <ul className="space-y-1">
+                                <li>
+                                  <LinkComponent>
+                                    <LinkComponent href="/" className="font-lato ...">
+                                      <a
++                                       className="font-lato text-sm text-beige hover:text-champagne transition-colors..."
+-                                       className="font-lato text-sm text-beige hover:text-champagne transition-colors..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/"
+                                      >
++                                       Inicio
+                                <li>
+                                  <LinkComponent>
+                                    <LinkComponent href="/catalog" className="font-lato ...">
+                                      <a
++                                       className="font-lato text-sm text-beige hover:text-champagne transition-colors..."
+-                                       className="font-lato text-sm text-beige hover:text-champagne transition-colors..."
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/catalog"
+                                      >
++                                       Productos
+                                <li>
+                                  <a
+                                    href="#contact"
++                                   className="font-lato text-sm text-beige hover:text-champagne transition-colors inl..."
+-                                   className="font-lato text-sm text-beige hover:text-champagne transition-colors inl..."
+                                  >
++                                   Contacto
+                            <div>
+                              <h4>
+                              <ul className="space-y-1">
+                                <li>
+                                  <a
+                                    href="mailto:info@millantu.com"
++                                   className="font-lato text-sm text-beige hover:text-champagne transition-colors py-..."
+-                                   className="font-lato text-sm text-beige hover:text-champagne transition-colors py-..."
+                                  >
++                                   info@millantu.com
+                                <li className="flex gap-2...">
+                                  <a
+                                    href="https://instagram.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
++                                   className="text-beige hover:text-champagne transition-colors w-11 h-11 flex items-..."
+-                                   className="text-beige hover:text-champagne transition-colors w-11 h-11 flex items-..."
+                                    aria-label="Instagram"
+                                  >
+                                  <a
+                                    href="https://facebook.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
++                                   className="text-beige hover:text-champagne transition-colors w-11 h-11 flex items-..."
+-                                   className="text-beige hover:text-champagne transition-colors w-11 h-11 flex items-..."
+                                    aria-label="Facebook"
+                                  >
+                        <WhatsAppButton phone="+54 9 294 ..." message="Hola! Quis...">
+                          <a
+                            href="https://wa.me/5492944924730?text=Hola!%20Quisiera%20consultar%20por%20el%20producto"
+                            target="_blank"
+                            rel="noopener noreferrer"
++                           className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-cent..."
+-                           className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-cent..."
+                            aria-label="Contactar por WhatsApp"
+                          >
+                  ...
+      ...
+ 
+ GET /catalog?category=joyeria&material=ORO 200 in 77ms (next.js: 33ms, application-code: 44ms)
+ GET /api/settings 200 in 1462ms (next.js: 118ms, application-code: 1344ms)
+ GET /api/settings 200 in 198ms (next.js: 5ms, application-code: 193ms)
+ GET /api/products?category=joyeria&material=ORO&active=true 200 in 2.8s (next.js: 14ms, application-code: 2.8s)
+ GET /api/products?category=joyeria&material=ORO&active=true 200 in 392ms (next.js: 6ms, application-code: 386ms)
+ GET /admin/products/346814d0-acfd-47d4-99c8-be409398e514/edit 200 in 197ms (next.js: 60ms, application-code: 137ms)
+ GET /catalog?category=joyeria&material=ORO 200 in 1486ms (next.js: 37ms, application-code: 1449ms)
+✓ Compiled in 140ms
+ GET /admin/products/346814d0-acfd-47d4-99c8-be409398e514/edit 200 in 299ms (next.js: 149ms, application-code: 150ms)
+ GET /catalog?category=joyeria&material=ORO 200 in 1526ms (next.js: 16ms, application-code: 1510ms)
