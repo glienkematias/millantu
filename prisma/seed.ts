@@ -338,7 +338,10 @@ async function main() {
   for (const product of productsData) {
     await prisma.product.upsert({
       where: { slug: product.slug },
-      update: { material: (product.material as Material) ?? null },
+      update: {
+        material: (product.material as Material) ?? null,
+        subcategoryId: product.subcategoryId,
+      },
       create: product,
     });
   }
