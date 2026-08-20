@@ -38,3 +38,5 @@ yarn-error.log*
 # test artifacts
 Test.zip
 *.zip
+.dev-server.log
+.dev-server.pid
